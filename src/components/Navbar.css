@@ -1,0 +1,257 @@
+.top {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  color: var(--ink);
+}
+
+/* ---------- Announcement bar ---------- */
+
+.bar {
+  height: var(--bar-h);
+  background: var(--plum-deep);
+  color: var(--cream);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.bar__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.bar__inner p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar__link {
+  flex: none;
+  color: var(--marigold);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Main bar ---------- */
+
+.nav {
+  position: relative;
+  z-index: 2; /* above the mobile menu panel, which sits at z-index 1 */
+  height: var(--nav-h);
+  background: rgba(251, 247, 239, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+
+.top--scrolled .nav {
+  border-bottom-color: var(--line);
+  box-shadow: 0 10px 30px -20px rgba(31, 24, 35, 0.3);
+}
+
+.top--open .nav {
+  background: var(--plum-deep);
+  color: var(--cream);
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+.top--open .logo__mark {
+  color: var(--cream);
+}
+
+.top--open .logo__mark rect {
+  fill: var(--plum-soft);
+}
+
+.nav__inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav__desktop {
+  margin-left: auto;
+}
+
+.nav__links {
+  display: flex;
+  gap: clamp(18px, 2.2vw, 36px);
+}
+
+.nav__link {
+  position: relative;
+  display: block;
+  padding: 10px 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--marigold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease);
+}
+
+.nav__link:hover::after,
+.nav__link[aria-current]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.nav__desktop + .nav__actions {
+  margin-left: clamp(4px, 1.4vw, 20px);
+}
+
+.nav__cta {
+  margin-right: 10px;
+}
+
+.nav__bag {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: background-color 0.3s var(--ease);
+}
+
+.nav__bag:hover {
+  background: var(--cream-deep);
+}
+
+.top--open .nav__bag:hover {
+  background: var(--plum-soft);
+}
+
+.nav__count {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--marigold);
+  color: var(--plum-deep);
+  font-size: 0.6875rem;
+  font-weight: 800;
+}
+
+.nav__toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  margin-right: -12px;
+  place-items: center;
+}
+
+/* ---------- Mobile menu ---------- */
+
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: var(--plum-deep);
+  color: var(--cream);
+  overflow-y: auto;
+}
+
+.menu__inner {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 48px;
+  padding-top: calc(var(--bar-h) + var(--nav-h) + 32px);
+  padding-bottom: 40px;
+}
+
+.menu__links li + li {
+  border-top: 1px solid var(--line-light);
+}
+
+.menu__link {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 16px 0;
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 8vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.menu__index {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--marigold);
+}
+
+.menu__foot {
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+}
+
+.menu__tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--marigold);
+}
+
+.menu__phone {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding-block: 6px;
+}
+
+@media (max-width: 980px) {
+  :root {
+    --nav-h: 66px;
+  }
+
+  .nav__desktop,
+  .btn.nav__cta {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: grid;
+  }
+
+  .bar__link {
+    display: none;
+  }
+}

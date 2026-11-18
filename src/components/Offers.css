@@ -1,0 +1,179 @@
+.offers {
+  background: var(--plum);
+  color: var(--cream);
+  padding-block: var(--section);
+}
+
+.offers__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+
+.offers__visual {
+  position: relative;
+}
+
+.offers__visual .media {
+  aspect-ratio: 4 / 4.6;
+  border-radius: var(--radius);
+}
+
+.offers__stamp {
+  position: absolute;
+  right: -16px;
+  bottom: 32px;
+  width: 128px;
+  height: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--marigold);
+  color: var(--plum-deep);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: rotate(8deg);
+}
+
+.offers__stamp strong {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.offers__title {
+  margin-top: 18px;
+}
+
+.offers__text {
+  margin-top: 22px;
+}
+
+.offers__timer {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.offers__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 72px;
+  padding: 12px 10px 10px;
+  border-radius: 12px;
+  background: var(--plum-deep);
+  border: 1px solid var(--plum-soft);
+}
+
+.offers__num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--marigold);
+}
+
+.offers__label {
+  margin-top: 6px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(251, 247, 239, 0.7);
+}
+
+.offers__over {
+  color: rgba(251, 247, 239, 0.8);
+}
+
+.offers__coupons {
+  display: grid;
+  gap: 10px;
+  margin: 28px 0 32px;
+}
+
+.coupon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 12px 12px 18px;
+  border-radius: 12px;
+  border: 1px dashed rgba(251, 247, 239, 0.35);
+}
+
+.coupon__code {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--marigold);
+}
+
+.coupon__detail {
+  font-size: 0.875rem;
+  color: rgba(251, 247, 239, 0.78);
+}
+
+.coupon__copy {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(251, 247, 239, 0.1);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  transition: background-color 0.3s var(--ease);
+}
+
+.coupon__copy:hover {
+  background: rgba(251, 247, 239, 0.2);
+}
+
+@media (max-width: 980px) {
+  .offers__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .offers__visual .media {
+    aspect-ratio: 16 / 11;
+  }
+
+  .offers__stamp {
+    right: 12px;
+    bottom: -20px;
+    width: 104px;
+    height: 104px;
+  }
+
+  .offers__copy {
+    padding-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .offers__timer {
+    gap: 8px;
+  }
+
+  .offers__unit {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .offers__num {
+    font-size: 1.6rem;
+  }
+}

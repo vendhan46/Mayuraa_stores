@@ -1,0 +1,35 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+}
+
+.logo__mark {
+  width: 40px;
+  height: 40px;
+  color: var(--plum);
+  flex: none;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo__name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.375rem;
+  letter-spacing: 0.08em;
+}
+
+.logo__sub {
+  margin-top: 4px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}

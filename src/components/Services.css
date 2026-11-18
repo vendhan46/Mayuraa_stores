@@ -1,0 +1,139 @@
+.services {
+  background: var(--paper);
+  border-block: 1px solid var(--line);
+}
+
+.services__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+
+.services__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 32px;
+  margin-top: 40px;
+}
+
+.service {
+  display: flex;
+  gap: 16px;
+}
+
+.service__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--cream-deep);
+  color: var(--plum);
+}
+
+.service__title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+.service__detail {
+  margin-top: 6px;
+  font-size: 0.9375rem;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* ---------- Loyalty card ---------- */
+
+.club {
+  position: relative;
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: var(--radius);
+  background: var(--plum);
+  color: var(--cream);
+  overflow: hidden;
+}
+
+.club__glow {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242, 169, 59, 0.45) 0%, rgba(242, 169, 59, 0) 70%);
+  pointer-events: none;
+}
+
+.club .eyebrow svg {
+  margin-right: -4px;
+}
+
+.club__title {
+  position: relative;
+  margin-top: 16px;
+}
+
+.club__text {
+  position: relative;
+  margin-top: 18px;
+  color: rgba(251, 247, 239, 0.8);
+  text-wrap: pretty;
+}
+
+.club__perks {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  margin: 28px 0 32px;
+  font-size: 0.9375rem;
+}
+
+.club__perks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.club__perks svg {
+  flex: none;
+  color: var(--marigold);
+}
+
+.club__card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 36px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--marigold) 0%, #f7c56f 100%);
+  color: var(--plum-deep);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  transform: rotate(-2deg);
+}
+
+.club__card b {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 980px) {
+  .services__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .services__list {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
